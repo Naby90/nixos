@@ -1,21 +1,25 @@
 { config, pkgs, lib, ... }:
 
+
 {
   programs.nvf = {
     enable = true;
+
     settings = {
       vim.vimAlias = true;
       vim.viAlias = false;
 
+      # Enable Lua loader (optional)
+      vim.enableLuaLoader = true;
+
+      # Enable LSP
       vim.lsp.enable = true;
 
-      # Add more modules, keymaps, plugins, etc. here
-      plugins = {
-        which-key.enable = true;
-        telescope.enable = true;
-      };
+      # Enable telescope (fuzzy finder)
+      vim.telescope.enable = true;
 
-      clipboard.providers.wl-clipboard.enable = true;
+      # Enable treesitter
+      vim.treesitter.enable = true;
     };
   };
 }

@@ -12,6 +12,7 @@
     ../home/programs/kitty.nix
      inputs.nvf.homeManagerModules.default
     ../home/programs/nvf.nix
+    ../home/programs/tmux.nix
   ];
 
   home.username = "demonback";
