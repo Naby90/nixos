@@ -14,8 +14,8 @@
     ripgrep
     cachix
     neofetch
-    waybar
     fuzzel
     wl-clipboard
+    swww
   ];
 }

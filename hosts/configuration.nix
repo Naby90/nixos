@@ -26,16 +26,6 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
    time.timeZone = "Europe/Rome";
 
-   # Select internationalisation properties.
-  # i18n.defaultLocale = "en_US.UTF-8";
-  # console = {
-  #   font = "Lat2-Terminus16";
-  #   keyMap = "us";
-  #   useXkbConfig = true; # use xkb.options in tty.
-  # };
-
-  # Enable the X11 windowing system.
-  # services.xserver.enable = true;
 
 fonts.packages = with pkgs; [
     fira-sans
@@ -52,19 +42,10 @@ fonts.packages = with pkgs; [
   ];
   
 
-  # Configure keymap in X11
-  # services.xserver.xkb.layout = "us";
-  # services.xserver.xkb.options = "eurosign:e,caps:escape";
-
-
-  # Enable sound.
-  # services.pulseaudio.enable = true;
-  # OR
    services.pipewire = {
      enable = true;
      pulse.enable = true;
    };
-
 
    users.users.demonback = {
      isNormalUser = true;
@@ -78,6 +59,7 @@ fonts.packages = with pkgs; [
  home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
+    backupFileExtension = "backup";
     extraSpecialArgs = { inherit inputs; };
     users = {
       "demonback" = import ./home.nix;
@@ -100,6 +82,17 @@ fonts.packages = with pkgs; [
     };
   };
 
+
+stylix = {
+  enable = true;
+  base16Scheme = "${pkgs.base16-schemes}/share/themes/nebula.yaml";
+  opacity.terminal = 0.8;
+
+};
+
+
+ 
+ 
   # this is a life saver.
   # literally no documentation about this anywhere.
   # might be good to write about this...
@@ -123,8 +116,6 @@ fonts.packages = with pkgs; [
 	programs.zsh.enable = true;
 	programs.firefox.enable = true;
 	programs.niri.enable = true;
-	programs.yazi.enable = true;
-
   
 
 hardware.graphics = {
