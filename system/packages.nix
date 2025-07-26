@@ -17,5 +17,10 @@
     fuzzel
     wl-clipboard
     swww
+    nautilus
+    btop
+    gnome-disk-utility
+
+    anki-bin
   ];
 }

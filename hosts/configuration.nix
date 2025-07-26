@@ -47,6 +47,8 @@ fonts.packages = with pkgs; [
      pulse.enable = true;
    };
 
+  services.udisks2.enable = true;
+
    users.users.demonback = {
      isNormalUser = true;
      shell = pkgs.zsh;
@@ -83,16 +85,14 @@ fonts.packages = with pkgs; [
   };
 
 
-stylix = {
-  enable = true;
-  base16Scheme = "${pkgs.base16-schemes}/share/themes/nebula.yaml";
-  opacity.terminal = 0.8;
+ # stylix = {
+ # enable = true;
+ # autoEnable = false;
+ # base16Scheme = "${pkgs.base16-schemes}/share/themes/nebula.yaml";
+ # opacity.terminal = 0.8;
+ #};
 
-};
 
-
- 
- 
   # this is a life saver.
   # literally no documentation about this anywhere.
   # might be good to write about this...
